@@ -22,40 +22,26 @@ const Navbar = (props: Props) => {
 
       {/* RIGHT SIDE PAGES */}
       <FlexBetweenBox gap="2rem">
-        <Box
-          sx={{
-            "&:hover": {
-              color: palette.primary[100],
-            },
-          }}
-        >
-          <Link
-            to="/"
-            onClick={() => setSelected("dashboard")}
-            style={{
-              color: selected === "dashboard" ? "inherit" : palette.grey[700],
+        {["dashboard", "predictions"].map((pageName) => (
+          <Box
+            key={pageName}
+            sx={{
+              "&:hover": {
+                color: palette.primary[100],
+              },
             }}
           >
-            dashboard
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            "&:hover": {
-              color: palette.primary[100],
-            },
-          }}
-        >
-          <Link
-            to="/"
-            onClick={() => setSelected("predictions")}
-            style={{
-              color: selected === "predictions" ? "inherit" : palette.grey[700],
-            }}
-          >
-            predictions
-          </Link>
-        </Box>
+            <Link
+              to="/"
+              onClick={() => setSelected(pageName)}
+              style={{
+                color: selected === pageName ? "inherit" : palette.grey[700],
+              }}
+            >
+              {pageName}
+            </Link>
+          </Box>
+        ))}
       </FlexBetweenBox>
     </FlexBetweenBox>
   )

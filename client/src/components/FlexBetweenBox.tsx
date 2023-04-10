@@ -3,8 +3,8 @@ import { styled } from "@mui/system"
 
 const FlexBetweenBox = styled(Box)({
   display: "flex",
-  justifycontent: "space-between",
-  alignitems: "center",
+  justifyContent: "space-between",
+  alignItems: "center",
 })
 
 export default FlexBetweenBox
