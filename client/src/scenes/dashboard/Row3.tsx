@@ -1,4 +1,4 @@
-import DashBoardBox from "./DashBoardBox"
+import DashBoardBox from "@/components/DashboardBox"
 
 type Props = {}
 

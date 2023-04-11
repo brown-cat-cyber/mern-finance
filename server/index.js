@@ -4,6 +4,9 @@ import helmet from "helmet"
 import morgan from "morgan"
 import cors from "cors"
 import mongoose from "mongoose"
+import kpiRoutes from "./routes/kpi.js"
+import KPI from "./models/KPI.js"
+import { kpis } from "./data/data.js"
 
 /* HTTP CONFIGURATIONS */
 dotenv.config()
@@ -18,6 +21,9 @@ app.use(
 app.use(morgan("common"))
 app.use(cors())
 
+/* ROUTES */
+app.use("/kpi", kpiRoutes)
+
 /* MONGOOSE SETUP */
 const PORT = 1337
 const MONGO_URL =
@@ -27,10 +33,9 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => {
-    console.log("====================================")
-    console.log()
-    console.log("====================================")
+  .then(async () => {
+    // await mongoose.connection.db.dropDatabase()
+    // KPI.insertMany(kpis)
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
   })
   .catch((error) => console.log(`${error} did not connect`))
