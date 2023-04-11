@@ -5,8 +5,10 @@ import morgan from "morgan"
 import cors from "cors"
 import mongoose from "mongoose"
 import kpiRoutes from "./routes/kpi.js"
-import KPI from "./models/KPI.js"
-import { kpis } from "./data/data.js"
+import productRoutes from "./routes/product.js"
+// import Product from "./models/Product.js"
+// import Transaction from "./models/Transaction.js";
+// import { products } from "./data/data.js"
 
 /* HTTP CONFIGURATIONS */
 dotenv.config()
@@ -23,6 +25,7 @@ app.use(cors())
 
 /* ROUTES */
 app.use("/kpi", kpiRoutes)
+app.use("/product", productRoutes)
 
 /* MONGOOSE SETUP */
 const PORT = 1337
@@ -36,6 +39,7 @@ mongoose
   .then(async () => {
     // await mongoose.connection.db.dropDatabase()
     // KPI.insertMany(kpis)
+    // Product.insertMany(products)
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
   })
   .catch((error) => console.log(`${error} did not connect`))

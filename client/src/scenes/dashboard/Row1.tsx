@@ -1,8 +1,8 @@
-import BoxHeader from "@/components/BoxHeader"
-import DashboardBox from "@/components/DashboardBox"
 import { useGetKpisQuery } from "@/states/api"
+import DashboardBox from "@/components/DashboardBox"
 import { useTheme } from "@mui/material"
 import { useMemo } from "react"
+import BoxHeader from "@/components/BoxHeader"
 import {
   ResponsiveContainer,
   CartesianGrid,
@@ -21,6 +21,7 @@ import {
 const Row1 = () => {
   const { palette } = useTheme()
   const { data } = useGetKpisQuery()
+  console.log("🚀 ~ file: Row1.tsx:24 ~ Row1 ~ data:", data)
 
   const totalAccounts = useMemo(() => {
     return (
@@ -35,9 +36,14 @@ const Row1 = () => {
       })
     )
   }, [data])
+  console.log(
+    "🚀 ~ file: Row1.tsx:26 ~ totalAccounts ~ totalAccounts:",
+    totalAccounts
+  )
 
   return (
     <>
+      {/* dashboard a: Revenue and Expenses  */}
       <DashboardBox gridArea="a">
         <BoxHeader
           title="Revenue and Expenses"
@@ -113,6 +119,7 @@ const Row1 = () => {
           </AreaChart>
         </ResponsiveContainer>
       </DashboardBox>
+      {/* dashboard b: Profit and Revenue */}
       <DashboardBox gridArea="b">
         <BoxHeader
           title="Profit and Revenue"
@@ -172,6 +179,7 @@ const Row1 = () => {
           </LineChart>
         </ResponsiveContainer>
       </DashboardBox>
+      {/* dashboard c  */}
       <DashboardBox gridArea="c">
         <BoxHeader
           title="Revenue Month by Month"
