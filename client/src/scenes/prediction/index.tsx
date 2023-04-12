@@ -1,4 +1,4 @@
-import DashboardBox from "@/components/DashboardBox"
+import DashboardBox from "../../components/DashboardBox"
 import FlexBetweenBox from "@/components/FlexBetweenBox"
 import { useGetKpisQuery } from "@/states/api"
 import { Box, Button, Typography, useTheme } from "@mui/material"
