@@ -31,6 +31,7 @@ app.use("/product", productRoutes)
 app.use("/transaction", transactionRoutes)
 
 /* MONGOOSE SETUP */
+/* because dotenv is not working, I had to hardcode the MONGO_URL and PORT */
 const PORT = 1337
 const MONGO_URL =
   "mongodb+srv://user:1234@cluster0.cpx3dlx.mongodb.net/?retryWrites=true&w=majority"
