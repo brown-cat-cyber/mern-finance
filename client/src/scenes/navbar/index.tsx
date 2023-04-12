@@ -32,7 +32,7 @@ const Navbar = (props: Props) => {
             }}
           >
             <Link
-              to="/"
+              to={pageName === "dashboard" ? "/" : `/${pageName}`}
               onClick={() => setSelected(pageName)}
               style={{
                 color: selected === pageName ? "inherit" : palette.grey[700],
