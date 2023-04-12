@@ -1,8 +1,8 @@
 import { useGetKpisQuery } from "../../states/api"
-import DashboardBox from "../../components/DashboardBox"
+import DashboardBox from "../../components/DashboardBox.tsx"
 import { useTheme } from "@mui/material"
 import { useMemo } from "react"
-import BoxHeader from "../../components/BoxHeader"
+import BoxHeader from "../../components/BoxHeader.tsx"
 import {
   ResponsiveContainer,
   CartesianGrid,
