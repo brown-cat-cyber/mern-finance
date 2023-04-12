@@ -1,6 +1,6 @@
-import BoxHeader from "../../components/BoxHeader.tsx"
-import DashboardBox from "../../components/DashboardBox.tsx"
-import FlexBetweenBox from "../../components/FlexBetweenBox.tsx"
+import BoxHeader from "../../components/BoxHeader"
+import DashboardBox from "../../components/DashboardBox"
+import FlexBetweenBox from "../../components/FlexBetweenBox"
 import {
   useGetKpisQuery,
   useGetProductsQuery,
